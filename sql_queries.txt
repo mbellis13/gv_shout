@@ -1,0 +1,38 @@
+
+FIND ALL SHOUTOUTS TO VIEW
+
+SELECT `username`, `text`, `date` 
+	FROM `post` INNER JOIN `follow` 
+    	ON `post`.`username`=`follow`.`followed` 
+    WHERE `follow`.`follower`={$_SESSION['username']} 
+    	AND `accepted`='1' 
+        AND `approved`='1'
+
+
+FIND ALL FOLLOWING
+
+SELECT `followed` FROM `follow` 
+	WHERE `follower`={$_SESSION['username']} 
+		AND `accepted`='1'
+
+
+
+FIND ALL FOLLOWED BY
+
+SELECT `follower` FROM `follow` 
+	WHERE `followed`={$_SESSION['username']} 
+		AND `accepted`='1'
+
+
+FIND FOLLOW REQUEST YOU NEED TO CONFIRM
+
+SELECT `follower` FROM `follow` 
+	WHERE `followed`={$_SESSION['username']} 
+		AND `accepted`='0'
+
+
+FIND FOLLOW REQUESTS USER MADE AND NOT CONFIRMED
+
+SELECT `followed` FROM `follow` 
+	WHERE `follower`={$_SESSION['username']}  
+		AND `accepted`='0
