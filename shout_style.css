@@ -1,0 +1,39 @@
+body {
+	background: linear-gradient(to right,lightgray, gray);
+}
+
+
+
+.shoutouts {
+	font-family: Arial, Helvetica, sans-serif;
+	border-collapse: collapse;
+	width 50%;
+}
+
+.shoutouts td, .shoutouts th {
+	border: 1px solid #ddd;
+	padding: 8px;
+	
+}
+
+.shoutouts th{
+	padding-top: 12px;
+	padding-bottom: 12px;
+	text-align: center;
+	background-color: #eeeee4;
+	color: #76b5c5;
+}
+
+.shoutouts td:nth-child(1){color: red;}
+.shoutouts td:nth-child(2){color: blue;}
+.shoutouts td:nth-child(3){color: gray;}
+
+.shoutouts tr:nth-child(even){background-color: #abdbe3;}
+
+.shoutouts tr:hover {background-color: #ddd;}
+
+
+
+
+
+
