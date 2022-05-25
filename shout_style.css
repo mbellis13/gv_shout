@@ -1,4 +1,5 @@
 body {
+	padding: 60px;
 	background: linear-gradient(to right,lightgray, gray);
 }
 
@@ -16,6 +17,10 @@ table{
 .navbar {
 	overflow: hidden;
 	background-color: blue;
+	width: 100%;
+	top: 0;
+	z-index: 2;
+	position: fixed;
 }
 
 

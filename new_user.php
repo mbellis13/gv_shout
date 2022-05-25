@@ -24,13 +24,10 @@ if($conn)
 
 if($_POST['new_password'] != $_POST['confirm_password'])
 {
-	//header("Location: index.html");
-	//exit();
-	echo 'pw !=';
+	header("Location: index.php?msg=pwMatch");
+	exit();
+	
 }
-else
-	echo 'pw ==';
-
 
 
 $query = "INSERT INTO user (username, email, password, admin) VALUES ('{$_POST['new_username']}', '{$_POST['email']}', UNHEX(SHA1('{$_POST['new_password']}')), '0');";
@@ -40,7 +37,7 @@ if($result = mysqli_query($conn,$query))
 {
 	echo 'query successful';
 	
-	header("Location: login.php");
+	header("Location: index.php?msg=created");
 	exit();
 }
 else
@@ -49,7 +46,7 @@ else
 	echo $_POST['email'];
 	echo $_POST['new_username'];
 
-	header("Location: index.php");
+	header("Location: index.php?msg=notCreated");
 }
 //exit();
 ?>
