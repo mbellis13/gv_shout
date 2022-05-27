@@ -21,7 +21,7 @@ $conn = mysqli_connect($servername, $username, $password, $database_name);
 //if($conn)
 //	echo "connection successful";
 
-$query = "SELECT username, text, date FROM post WHERE username='{$_SESSION['username']}' AND approved='1';";
+$query = "SELECT username, text, date FROM post WHERE username='{$_SESSION['username']}' AND approved='1' ORDER BY date DESC;";
 
 
 
@@ -57,12 +57,12 @@ if(!($result = mysqli_query($conn, $query)))
 		<h2 style="color:white;">Shout Out!!</h2>
 	
 		<textarea id="shout_area" name="shout_area" style="padding-left:15px;" rows="3" cols="50" placeholder="what do you have to say?"></textarea>
-		<button type="submit">SHOUT</button>
+		<button type="submit" id="shout_btn">SHOUT</button>
 	</form>
 	<form action = "request_follow.php" method = "post">
 		<h2 style="color:white;">Request Follow:</h2>
 	
-		<input id="followed" name="followed" style="padding-left:15px; width:300px;" placeholder="Who do you want to hear? Enter Username">
+		<input id="followed" name="followed" style="padding-left:15px; width:300px;" placeholder="Who do you want to hear? Enter Username" maxlength="140">
 		<button type="submit">REQUEST</button>
 	</form>
 </div>
@@ -82,4 +82,19 @@ if(!($result = mysqli_query($conn, $query)))
 	</table>
 </body>
 
+	<script>
+	// Get the input field
+	var input = document.getElementById("shout_area");
+
+		// Execute a function when the user presses a key on the keyboard
+		input.addEventListener("keypress", function(event) {
+  		// If the user presses the "Enter" key on the keyboard
+  		if (event.key === "Enter") {
+    			// Cancel the default action, if needed
+    			event.preventDefault();
+    			// Trigger the button element with a click
+    			document.getElementById("shout_btn").click();
+  		}
+	}); 
+	</script>
 </HTML>
