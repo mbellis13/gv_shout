@@ -9,7 +9,7 @@ if len(sys.argv) < 3:
 
 
 webmaster='gv.shout.webmaster@gmail.com'
-access='gvshoutwebmaster'
+access=''
 
 smtp_server_domain_name='smtp.gmail.com'
 port=465
