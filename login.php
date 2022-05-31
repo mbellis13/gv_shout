@@ -9,7 +9,7 @@ $database_name = "gvcs_app";
 $conn = mysqli_connect($servername, $username, $password,$database_name);
 
 
-$query = "SELECT `username` FROM `user` WHERE username='{$_POST['username']}' AND password=UNHEX(SHA1('{$_POST['password']}'))";
+$query = "SELECT `username` FROM `user` WHERE username='{$_POST['username']}' AND password=UNHEX(SHA1('{$_POST['password']}')) AND verified='1'";
 
 
 if($result = mysqli_query($conn,$query))

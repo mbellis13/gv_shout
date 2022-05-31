@@ -35,6 +35,14 @@
 					<td><input name="email" placeholder="enter email" type="text"/></td>
 				</tr>
 				<tr>
+					<td><span  style="text-decoration:underline">F</span>irst Name</td>
+					<td><input name="first_name" placeholder="first name" type="text"/></td>
+				</tr>
+				<tr>
+					<td><span  style="text-decoration:underline">L</span>ast Name</td>
+					<td><input name="last_name" placeholder="Last Name" type="text"/></td>
+				</tr>
+				<tr>
 					<td><span  style="text-decoration:underline">U</span>sername</td>
 					<td><input name="new_username" placeholder="enter username" type="text"/></td>
 				</tr>
